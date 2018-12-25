@@ -11,8 +11,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-    @RabbitListener(queues = {"queue1","queue3"})
+    @RabbitListener(queues = {"queue1","queue3","queue5"})
     public void receive(String message) {
         System.out.println(message);
+    }
+
+    @RabbitListener(queues = "queue7")
+    public String rpc(String message) {
+        return message.toUpperCase();
     }
 }

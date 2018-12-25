@@ -37,4 +37,15 @@ public class SendController {
         return "ok";
     }
 
+    @GetMapping("/topic")
+    public String topic() {
+        producer.topic();
+        return "ok";
+    }
+
+    @GetMapping("/rpc")
+    public String rpc() {
+        producer.rpc();
+        return "ok";
+    }
 }

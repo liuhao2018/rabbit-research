@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-    @RabbitListener(queues = {"queue2","queue4"})
+    @RabbitListener(queues = {"queue2","queue4","queue6"})
     public void receive(String message) {
         System.out.println(message);
     }

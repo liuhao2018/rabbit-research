@@ -33,4 +33,13 @@ public class Producer {
             rabbitTemplate.convertAndSend("amq.direct","common","发送公共消息");
         }
     }
+
+    public void topic() {
+        rabbitTemplate.convertAndSend("amq.topic","user.info.update","用户信息更新");
+    }
+
+    public void rpc() {
+        String response = (String) rabbitTemplate.convertSendAndReceive("queue7","welcome");
+        System.out.println("响应：" + response);
+    }
 }
